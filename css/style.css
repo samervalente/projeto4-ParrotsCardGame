@@ -25,22 +25,47 @@ body > h1{
     margin: 40px 0;
 }
 
-.card{
-    background-color: #A7E9AF;
+
+
+.cartao{
     width:117px;
     height:146px;
-    border-radius: 5px;
-    border: 1px solid #99CEA8; 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-right:34px;
+    position:relative;
+    margin-right: 34px;
     margin-top:34px;
-    cursor:pointer;
-    
 }
 
-.card > img {
+.face{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: all .5s;
+    background-color:#A7E9AF;
+    border-radius:10px;
+    transform-style: preserve-3d;
+}
+
+
+  .rotacionafront{
+    transform: rotateY(-180deg);
+  }
+
+  .back-face{
+    transform: rotateY(180deg);
+  }
+
+  .rotacionavoltaback{
+    transform: rotateY(0deg);
+  }
+
+
+
+
+.cartao img {
     width:100px;
     height:100px;
 }
