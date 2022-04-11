@@ -38,7 +38,7 @@ function getCartas(){
     cartas.sort(comparador)
 }
 
-document.querySelector(".tempo").innerHTML = `Tempo: ${parseInt(minuto)} min : ${tempo++} seg`
+document.querySelector(".tempo").innerHTML = `Tempo: ${parseInt(minuto)} min : ${tempo++} s`
 
 function adicionaCartas(){
     container.innerHTML = cartas.join('')
@@ -51,7 +51,8 @@ let carta;
 
 function virarcarta(carta)
 {
-
+    jogadas ++
+    document.querySelector(".jogadas").innerHTML = `Jogadas: ${jogadas}`
  if(carta.classList.contains("clicado") == false)
  {
     
@@ -63,21 +64,32 @@ function virarcarta(carta)
     
  }
  else if(pares.length == 2){
-   
 
      if(pares[0].innerHTML === pares[1].innerHTML){ 
          pares = []
          acertos ++
-         jogadas ++
-         document.querySelector(".jogadas").innerHTML = `Jogadas: ${jogadas}`
          if(acertos == quantidade/2){
-            console.log("GANHOUU!")
+            document.querySelector(".ganhou").classList.remove("hidden")
+            document.querySelector(".ganhou").querySelector(".mostrajogadas").innerHTML = `PARABÉNS! Você venceu em ${jogadas} jogadas <br> e no tempo de ${minuto} minutos e ${tempo-1} segundos!`
+
+             setTimeout(function(){
+                let boolean = prompt("Você deseja reiniciar a partida? Digite sim ou não")
+                //while(boolean !== 'sim' || boolean !== 'não'){
+                    //boolean = prompt("Você deseja reiniciar a partida? Digite sim ou não")
+                    //console.log(boolean)
+                //}
+                if(boolean === "sim"){
+                    document.location.reload(true);
+                }else if (boolean === "não"){
+                    alert("Obrigado por jogar!")
+                }
+                
+             }, 2000)
         }
      }
      
      else if(pares[0] !== pares[1]){
-        jogadas ++
-        document.querySelector(".jogadas").innerHTML = `Jogadas: ${jogadas}`
+  
         pares[0].classList.remove("clicado")
         pares[1].classList.remove("clicado")
          let carta1B = pares[0].querySelector(".back-face")
@@ -125,3 +137,6 @@ setInterval(function (){
 }, 1000)
 
 
+function reiniciar(){
+    document.location.reload(true)
+}

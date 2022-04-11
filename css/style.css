@@ -5,17 +5,20 @@
 body{
     background-color: #EEF9BF;
     text-align: center;
+
     
 }
 
+
 .container{
-    justify-content:center;
-    width: 950px;
-    margin: 0 auto;
     display:flex;
-    justify-content:center;
+    margin: 0 auto;
     flex-wrap:wrap;
+    max-width: 950px;
     padding-bottom:34px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
 }
 
 body > h1{
@@ -30,8 +33,8 @@ body > h1{
     width:117px;
     height:146px;
     position:relative;
-    margin-right: 34px;
-    margin-top:34px;
+    margin: 34px 34px;
+    cursor:pointer;
 }
 
 .face{
@@ -76,6 +79,13 @@ body > h1{
   padding: 10px;
   width: 260px;
   margin: 0 auto;
+  position:absolute;
+  right: 130px;
+  top:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  
 }
 
 .info h4{
@@ -83,3 +93,94 @@ body > h1{
   margin: 10px 0px;
   font-size: 25px;
 }
+
+
+.reset{
+  width:140px;
+  height:130px;
+  margin-bottom:150px;
+  cursor:pointer;
+  
+}
+button:hover{
+  background-color:rgb(21, 214, 21);
+  transition: 0.3s;
+  border: px solid rgb(211, 226, 3);
+}
+
+.ganhou{
+  width:700px;
+  height:400px;
+  object-fit:cover;
+  border-radius:5px;
+  background: rgba(119, 228, 119, 0.863);
+  box-shadow: 5px 5px 5px gray;
+  display:flex;
+  z-index:1;
+  top:130px;
+  left:500px;
+  position:absolute;
+  align-items:center;
+  justify-content:center;
+}
+
+.ganhou p {
+  color:rgb(15, 14, 14);
+  font-size:20pt;
+  font-family:'Roboto';
+  padding:10px;
+  border-radius:10px;
+}
+
+.gif{
+  width:500px;
+  height:400px;
+  position:absolute;
+}
+
+.Left{
+  left:0;
+}
+.Right{
+  right: 0;
+}
+
+.Bottom{
+  bottom: 2px;
+  left: 600px;
+}
+
+.hidden{
+  display:none;
+}
+
+@media (max-width: 768px){
+  .container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .carta{
+    margin: 15px 0;
+  }
+
+  .info{
+    bottom:0;
+    right:0;
+    top:auto;
+    width:100%;
+    position:fixed;
+   
+  }
+
+  .ganhou{
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+  }
+
+
+}
+
