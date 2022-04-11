@@ -5,6 +5,7 @@
 body{
     background-color: #EEF9BF;
     text-align: center;
+    
 }
 
 .container{
@@ -56,14 +57,29 @@ body > h1{
     transform: rotateY(180deg);
   }
 
+  .rotaciona180{
+    transform:rotateY(180deg)
+  }
+
   .rotacionavoltaback{
     transform: rotateY(0deg);
   }
 
-
-
-
 .carta  img {
     width:100px;
     height:100px;
+}
+
+.info{
+  background-color:#A7E9AF;
+  border-radius: 5px;
+  padding: 10px;
+  width: 260px;
+  margin: 0 auto;
+}
+
+.info h4{
+  font-family: 'Roboto';
+  margin: 10px 0px;
+  font-size: 25px;
 }

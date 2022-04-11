@@ -1,0 +1,35 @@
+[33mcommit a72f3acf3d688ecc62cfd861fa8f2beece09cbf3[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Samer Valente <samervalente@gmail.com>
+Date:   Mon Apr 11 09:04:54 2022 -0300
+
+    Funcionalidade Nova - Comparar as duas cartas
+
+[33mcommit 42ea18356950093a14ace9f7d98dff5091952245[m
+Author: Samer Valente <samervalente@gmail.com>
+Date:   Sat Apr 9 13:35:27 2022 -0300
+
+    Última versão - Virar cartas
+
+[33mcommit f033aadaeddea52577df8dc99bc3e463f924a694[m
+Author: Samer Valente <samervalente@gmail.com>
+Date:   Fri Apr 8 12:45:14 2022 -0300
+
+    Distribuir cartas
+
+[33mcommit 63d769e7b5f9544be4b063d7873c8b8344e18df2[m
+Author: Samer Valente <samervalente@gmail.com>
+Date:   Thu Apr 7 11:54:53 2022 -0300
+
+    Funcionalidade Adicionada - Clique nas cartas
+
+[33mcommit c6ede19dc4ada82d3c98fa759b9071c963dcea9d[m
+Author: Samer Valente <samervalente@gmail.com>
+Date:   Wed Apr 6 17:38:54 2022 -0300
+
+    Funcionalidade Adicionada - Validar input e inserir cartas
+
+[33mcommit 19270102ccc1d112e7135e8f05e7b57926623c38[m
+Author: Samer Valente <samervalente@gmail.com>
+Date:   Wed Apr 6 17:36:50 2022 -0300
+
+    Layout Finalizado
