@@ -18,6 +18,7 @@ function comparador() {
 }
 
 imagebank.sort(comparador)
+let container = document.querySelector(".container")
 function getCartas(){
     cartas.length = quantidade
     imagebank.length = quantidade/2
@@ -34,34 +35,45 @@ function getCartas(){
 }
 
 function adicionaCartas(){
-    let container = document.querySelector(".container")
-   
     container.innerHTML = cartas.join('')
 }
 
 getCartas()
 adicionaCartas()
 
-function virarcarta(carta){
-    let caixaSelecionada  = document.querySelector(".clicada")
-    giracarta(carta) 
-    carta.classList.add("clicada")
-   
-    verifica(carta, caixaSelecionada)
-  
+function virarcarta(carta)
+{
+ if(carta.classList.contains("clicado") == false)
+ {
+    carta.classList.add("clicado")
+    giraCarta(carta)
+    pares.push(carta)
+ }
+ if(pares.length != 2)
+ {
+ }
+ else if(pares.length = 2){
+     if(pares[0].innerHTML == pares[1].innerHTML){
+         pares = []
+         console.log("Iguais")
+     }
+     else if(pares[0] !== pares[1]){
+        console.log(carta.querySelector(".clicado").querySelectorAll(".front-face"))
+         pares = []  
+       
+         console.log(carta.querySelector(".back-face"))
+     }
+    }  
 }
-function giracarta(carta){
+
+function giraCarta(carta){
     carta.querySelector(".front-face").classList.add("rotacionafront")
-    carta.querySelector(".back-face").classList.add("rotacionavoltaback") 
+    carta.querySelector(".back-face").classList.add("rotacionavoltaback")
 }
 
-function verifica(carta, caixaSelecionada){
-    if(carta.innerHTML === caixaSelecionada.innerHTML){
-        console.log("Iguais")
-    }else if(carta.innerHTML !== caixaSelecionada.innerHTML){
-        console.log("Diferentes")
-    }
 
-}
+
+
+
 
 
