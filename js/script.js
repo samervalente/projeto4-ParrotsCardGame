@@ -16,7 +16,6 @@ let jogadas = 0;
 let tempo = 0;
 let minuto = 0; 
 
-
 function comparador() { 
     return Math.random() - 0.5; 
 }
@@ -28,7 +27,7 @@ function getCartas(){
     imagebank.length = quantidade/2
     for(let i = 0; i < imagebank.length; i ++){
         card = `
-        <div class="carta ${imagebank[i]}"  onclick="virarcarta(this)">
+        <div class="carta ${imagebank[i]}"  onClick="virarcarta(this)">
             <div class="face front-face"><img src="images/front.png"></div>
             <div class="face back-face"><img src="images/${imagebank[i]}"></div> 
         </div>`
@@ -51,23 +50,34 @@ let carta;
 
 function virarcarta(carta)
 {
-    jogadas ++
-    document.querySelector(".jogadas").innerHTML = `Jogadas: ${jogadas}`
- if(carta.classList.contains("clicado") == false)
- {
-    
+   
+    if(carta.classList.contains("clicada")){
+        return;
+    }
+
+    carta.classList.add("clicada")
     giraCarta(carta)
     pares.push(carta)
- }
+     console.log(pares[0])
+    jogadas ++
+    document.querySelector(".jogadas").innerHTML = `Jogadas: ${jogadas}`
+   
  if(pares.length != 2)
  {
     
  }
  else if(pares.length == 2){
+    if(!carta.classList.contains("clicada")){
+        setAttribute("onClick", "")
+    }
 
      if(pares[0].innerHTML === pares[1].innerHTML){ 
+        pares[0].classList.remove("clicada")
+        pares[1].classList.remove("clicada")
+        console.log(pares[0])
          pares = []
          acertos ++
+         
          if(acertos == quantidade/2){
             document.querySelector(".ganhou").classList.remove("hidden")
             document.querySelector(".ganhou").querySelector(".mostrajogadas").innerHTML = `PARABÉNS! Você venceu em ${jogadas} jogadas <br> e no tempo de ${minuto} minutos e ${tempo-1} segundos!`
@@ -82,16 +92,14 @@ function virarcarta(carta)
                     document.location.reload(true);
                 }else if (boolean === "não"){
                     alert("Obrigado por jogar!")
-                }
-                
+                } 
              }, 2000)
         }
      }
      
-     else if(pares[0] !== pares[1]){
-  
-        pares[0].classList.remove("clicado")
-        pares[1].classList.remove("clicado")
+     else if(pares[0].innerHTML !== pares[1].innerHTML){
+        pares[0].classList.remove("clicada")
+        pares[1].classList.remove("clicada")
          let carta1B = pares[0].querySelector(".back-face")
          let carta2B = pares[1].querySelector(".back-face")
 
@@ -114,6 +122,7 @@ function virarcarta(carta)
      }  
     }  
 }
+
 
 function giraCarta(carta){
     carta.querySelector(".front-face").classList.add("rotacionafront")
