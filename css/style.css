@@ -14,7 +14,6 @@ body{
     margin: 0 auto;
     flex-wrap:wrap;
     max-width: 950px;
-    padding-bottom:34px;
     justify-content:center;
     align-items:center;
     flex-wrap:wrap;
@@ -25,16 +24,18 @@ body > h1{
     font-size: 56px;
     font-family: 'Roboto';
     font-weight: 700;
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
 .carta{
     width:117px;
     height:146px;
     position:relative;
-    margin: 34px 34px;
+    margin-top:34px;
+    margin-left:34px;
     cursor:pointer;
 }
+
 
 .face{
     width: 100%;
@@ -48,6 +49,10 @@ body > h1{
     background-color:#A7E9AF;
     border-radius:10px;
     transform-style: preserve-3d;
+}
+
+.face.front-face:hover{
+  background-color:rgb(115, 216, 115);
 }
 
 
@@ -73,14 +78,14 @@ body > h1{
 }
 
 .info{
-  background-color:#343634;
+  background-color:#343634a9;
   border-radius: 5px 0px 0px 5px;
   padding: 10px;
   width: 260px;
   margin: 0 auto;
   position:absolute;
   right: 0px;
-  top:30px;
+  bottom:0px;
   display:flex;
   align-items:center;
   justify-content:space-around;
@@ -96,16 +101,23 @@ body > h1{
 
 
 .reset{
-  width:140px;
-  height:130px;
-  margin-bottom:150px;
+  width:80px;
+  height:80px;
   cursor:pointer;
-  
+  border-radius:50%;
+  background-color:rgb(5, 106, 153);
+  color:white;
+  border: 5px dotted rgb(255, 255, 255);
+  font-family:'Roboto';
+  font-size:12pt;
+  position:fixed;
+  bottom: 20px;
+  left:200px;
 }
 button:hover{
-  background-color:rgb(21, 214, 21);
-  transition: 0.3s;
-  border: px solid rgb(211, 226, 3);
+  background-color:rgb(6, 162, 201);
+  transition: 0.8s;
+  border: 5px dotted rgb(27, 196, 218);
 }
 
 .ganhou{
